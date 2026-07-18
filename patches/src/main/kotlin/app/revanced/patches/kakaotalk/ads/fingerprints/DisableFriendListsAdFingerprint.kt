@@ -51,3 +51,15 @@ internal object BirthdayFriendsBizBoardBindFingerprint : Fingerprint(
                 )
     }
 )
+
+internal object FriendTabGlobalAdModelFingerprint : Fingerprint(
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    parameters = listOf("Ljava/lang/Object;"),
+    returnType = "Ljava/lang/Object;",
+    filters = OpcodesFilter.opcodesToFilters(
+        Opcode.NEW_INSTANCE,
+    ),
+    custom = { _, classDef ->
+        classDef.sourceFile == "FriendTabGlobalAdViewModel.kt"
+    }
+)

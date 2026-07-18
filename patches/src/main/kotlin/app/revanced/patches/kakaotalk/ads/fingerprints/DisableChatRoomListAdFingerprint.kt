@@ -25,3 +25,14 @@ internal object ChatListAdHelperEnabledFingerprint : Fingerprint(
     ),
    custom = { _, classDef -> classDef.sourceFile == "ChatListAdHelper.kt" }
 )
+
+internal object ChatListGlobalAdEnabledFingerprint : Fingerprint(
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    parameters = listOf(
+        "Landroid/content/Context;",
+        "Z",
+        "Lkotlin/coroutines/Continuation;",
+    ),
+    returnType = "Ljava/lang/Object;",
+    custom = { _, classDef -> classDef.sourceFile == "ChatListAdHelper.kt" }
+)
